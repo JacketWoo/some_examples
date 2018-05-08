@@ -214,19 +214,6 @@ int32_t main(int32_t argc, char* argv[]) {
   for (int32_t i=0; i != 10000; ++i) {
     sender.MultiSend(send_items0);
   }
-  //sleep(1);
-  sender.MultiSend(send_items0);
-  //sleep(1);
-  sender.MultiSend(send_items0);
-
-  for (int32_t idx = 0; idx != 1000; ++idx) {
-    send_items.push_back(std::pair<std::string, std::string>{url, msg});
-  }
-  for (uint32_t idx = 0; idx != 10; ++idx) {
-    sender.MultiSend(send_items);
-    fprintf(stdout, "%d\n", idx);
-  }
-  while (1) sleep(1);
   sender.Deinit();
   return 0;
 }
